@@ -13,7 +13,7 @@
 ?>
 
     <?php
-        $servername = "pictures.cghowuarmo5g.us-east-1.rds.amazonaws.com";
+        $servername = "pictures.cftgnvjnvxzz.us-east-1.rds.amazonaws.com";
         $username = "admin";
         $password = "mypassword";
         $database = "myWebsiteDB";
@@ -33,8 +33,8 @@
 
             while($row = $result->fetch_assoc()) {
                 print("
-		<img style=\"margin:12px 0 0 0;width:500px;height:281px\" 
-		src=\"https://imagesjilani.s3.amazonaws.com/". $row["url"] ."\">
+                <img style=\"margin:12px 0 0 0;width:500px;height:281px\" 
+                src=\"/images/". $row["url"] ."\">
                <h2>". $row["title"] ."</h2>");
             }
           } else {
@@ -43,10 +43,16 @@
         $conn->close();
     ?>
 
-
 <?php
     print("
+<form action=\"upload.php\" method=\"post\" enctype=\"multipart/form-data\">
+  Select image to upload:
+  <input type=\"file\" name=\"fileToUpload\" id=\"fileToUpload\" required>
+  <input type=\"text\" name=\"title\" id=\"title\" required>
+  <input type=\"submit\" value=\"Upload Image\" name=\"submit\">
+</form>
 </body>
 </html>");
 ?>
+
 
