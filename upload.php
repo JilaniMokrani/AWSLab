@@ -20,4 +20,5 @@
 
         $query ="INSERT INTO Images (url,title) VALUES (\"" . basename($image["name"]) . "\", \"" . $_POST["title"] . "\");";
         $conn -> query($query);
+        header("Location: index.php");
 ?>
