@@ -2,7 +2,7 @@
 <?php
         $image = $_FILES["fileToUpload"];
         
-	rename($image["tmp_name"],"/var/www/html/img/".basename($image["name"]));
+	rename($image["tmp_name"],"/var/www/html/img/". $image["name"]);
         shell_exec("aws s3 mv img/ s3://cloudjilaniensit/ --acl public-read --recursive");
 
         $servername = "pictures.cftgnvjnvxzz.us-east-1.rds.amazonaws.com";
