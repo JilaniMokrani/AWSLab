@@ -18,7 +18,7 @@
                 die("Connection failed: " . $conn->connect_error);
         }
         
-        $query ="INSERT INTO Images (url,title) VALUES (\"" . basenama($image["name"]) . "\", \"" . $_POST["title"] . "\");";
+        $query ="INSERT INTO Images (url,title) VALUES (\"" . basename($image["name"]) . "\", \"" . $_POST["title"] . "\");";
         $conn -> query($query);
         
         header("location: index.php");
