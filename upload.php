@@ -6,7 +6,7 @@
         rename($image["tmp_name"],"/var/www/html/img/".$image["name"]);
         shell_exec("aws s3 cp img/".$image["name"]." s3://jilaniensit/ --acl public-read --recursive");
 
-        $servername = "database-1.cjtgh1icirxp.us-east-1.rds.amazonaws.com";
+        $servername = "pictures.cftgnvjnvxzz.us-east-1.rds.amazonaws.com";
         $username = "admin";
         $password = "mypassword";
         $database = "myWebsiteDB";
