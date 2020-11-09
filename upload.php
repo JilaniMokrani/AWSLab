@@ -4,7 +4,7 @@
         $image = $_FILES["fileToUpload"];
         $target_file = $target_dir . basename($image["name"]);
         rename($image["tmp_name"],"/var/www/html/img/".$image["name"]);
-        shell_exec("aws s3 cp img/ s3://cloudjilaniensit/ --acl public-read --recursive");
+        shell_exec("aws s3 cp img/".$image["name"]." s3://jilaniensit/ --acl public-read --recursive");
 
         $servername = "pictures.cftgnvjnvxzz.us-east-1.rds.amazonaws.com";
         $username = "admin";
